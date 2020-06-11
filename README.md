@@ -13,7 +13,8 @@ Wie man weitere Spieltype hinzufügen kann [sieht man hier](#Neuen-Spieltyp-erst
 
 ## Installieren
 
-Die App direkt über diesen Link genutzt werden: [https://xdgeforcexd.github.io/score-calculator/] (https://xdgeforcexd.github.io/score-calculator/)
+Die App direkt über diesen Link genutzt werden:  
+https://xdgeforcexd.github.io/score-calculator/
 
 Man kann diese App aber auch auf einem eigenen Webserver hosten.
 
