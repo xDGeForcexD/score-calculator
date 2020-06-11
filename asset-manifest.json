@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/score-calculator/static/css/main.7968cca6.chunk.css",
+    "main.js": "/score-calculator/static/js/main.9d60dbc0.chunk.js",
+    "main.js.map": "/score-calculator/static/js/main.9d60dbc0.chunk.js.map",
+    "runtime-main.js": "/score-calculator/static/js/runtime-main.078fd211.js",
+    "runtime-main.js.map": "/score-calculator/static/js/runtime-main.078fd211.js.map",
+    "static/css/2.1b80c383.chunk.css": "/score-calculator/static/css/2.1b80c383.chunk.css",
+    "static/js/2.00b93a37.chunk.js": "/score-calculator/static/js/2.00b93a37.chunk.js",
+    "static/js/2.00b93a37.chunk.js.map": "/score-calculator/static/js/2.00b93a37.chunk.js.map",
+    "index.html": "/score-calculator/index.html",
+    "precache-manifest.bb577581b397e01a5f48332c36e8bd1e.js": "/score-calculator/precache-manifest.bb577581b397e01a5f48332c36e8bd1e.js",
+    "service-worker.js": "/score-calculator/service-worker.js",
+    "static/css/2.1b80c383.chunk.css.map": "/score-calculator/static/css/2.1b80c383.chunk.css.map",
+    "static/css/main.7968cca6.chunk.css.map": "/score-calculator/static/css/main.7968cca6.chunk.css.map",
+    "static/js/2.00b93a37.chunk.js.LICENSE.txt": "/score-calculator/static/js/2.00b93a37.chunk.js.LICENSE.txt",
+    "static/media/onsenui.css": "/score-calculator/static/media/ionicons.cfdc1522.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.078fd211.js",
+    "static/css/2.1b80c383.chunk.css",
+    "static/js/2.00b93a37.chunk.js",
+    "static/css/main.7968cca6.chunk.css",
+    "static/js/main.9d60dbc0.chunk.js"
+  ]
+}
