@@ -13,7 +13,9 @@ Wie man weitere Spieltype hinzufügen kann [sieht man hier](#Neuen-Spieltyp-erst
 
 ## Installieren
 
-Diese App muss auf einem Webserver bereit gestellt werden.
+Die App direkt über diesen Link genutzt werden: [https://xdgeforcexd.github.io/score-calculator/] (https://xdgeforcexd.github.io/score-calculator/)
+
+Man kann diese App aber auch auf einem eigenen Webserver hosten.
 
 Die App kann mittels:
 
@@ -66,4 +68,5 @@ Die App wurde auf folgenden Geräten getestet:
 
 ## License
 Diese App ist mit React und Onsen UI aufgebaut.
+
 Copyright (c) 2020 xDGeForcexD. Licensed under MIT license, see LICENSE for the full license.
