@@ -1,0 +1,49 @@
+.gameRageTable {
+    cursor: pointer;
+}
+.gameRageTable td {
+    margin: 1px;
+    background: #cfced8;
+    width: 20px;
+    height: 20px;
+}
+
+.formRageDecInc {
+    width: 150px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top: 5px; 
+}
+
+.formRageDec, .formRageInc, .formRageView {
+    margin: 0 auto;
+    padding: 0;
+    float: left;
+    background: none;
+    border: 1px solid rgb(131, 131, 131);
+}
+
+.formRageDec, .formRageInc {
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+}
+
+
+.formRageDec {
+    border-radius: 10px 0 0 10px;
+}
+
+.formRageInc {
+    border-radius: 0 10px 10px 0;
+}
+
+.formRageView {
+    width: 50px;
+    height: 48px;
+    text-align: center;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    font-size: 20px;
+}

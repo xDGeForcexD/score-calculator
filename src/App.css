@@ -1,0 +1,170 @@
+.menuVersion {
+  padding: 5px;
+  color: #d6d7dd;
+  font-variant: small-caps;
+}
+
+.scoreTable {
+  overflow-x: auto;
+}
+
+.scoreTable thead {
+  display: table;
+}
+
+.scoreTable tbody {
+  display: block;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+}
+
+.scoreTable tbody::-webkit-scrollbar {
+  display: none;
+}
+
+.scoreTable>tbody>tr>td, .scoreTable>thead>tr>th {
+  min-width: 75px;
+  width: 75px;
+  height: 75px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #e2e1ec;
+  margin: 0.5px 2px;
+}
+
+.scoreTable .dealer {
+  background: #ff0000;
+}
+
+.scoreTableHead, .scoreTableSum {
+  font-weight: bold;
+}
+
+.rangliste {
+  width: 100%;
+}
+
+.rangliste tbody::-webkit-scrollbar {
+  display: none;
+}
+
+.rangliste thead {
+  display: table;
+  width: 100%;
+}
+
+.rangliste tbody {
+  display: block;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+}
+
+.rangliste tr {
+  display: table;
+}
+
+.rangliste td, .rangliste th {
+  margin: 2px;
+  background: #3e3e3f;
+  height: 50px;
+}
+
+.ranglisteTop {
+  font-weight: bold;
+}
+
+.ranglisteHead {
+  font-weight: bold;
+  background: #5a5a5c;
+}
+
+.rangMedal {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background: #5a5a5c;
+  margin: 0 auto;
+  line-height: 28px;
+}
+
+.medalFirst {
+  background: gold;
+  color: #000000;
+}
+
+.medalSecond {
+  background: silver;
+  color: #000000;
+}
+.medalThird {
+  background: #cc8e34;
+  color: #000000;
+}
+
+.scoreSummary {
+  width: 90%;
+  padding: 20px 0;
+  margin: auto;
+  
+}
+
+.scoreSummaryHead, .scoreSummaryContent, .scoreSummaryFooter {
+  width: 100%;
+  margin: auto;
+}
+
+.scoreSummaryHead, .scoreSummaryFooter {
+  background: #3e3e3f;
+  font-weight: bold;
+}
+
+.scoreSummaryHead {
+  height: 40px;
+  padding-top: 20px;
+}
+
+.scoreSummaryFooter {
+  height: 40px;
+  padding-top: 4px;
+}
+
+.scoreSummaryHeadLeft, .scoreSummaryHeadCenter, .scoreSummaryHeadRight {
+  height: 100%;
+  float: left;
+  margin: auto;
+}
+
+.scoreSummaryHeadLeft {
+  width: 20%;
+}
+
+.scoreSummaryHeadCenter {
+  width: 60%;
+  padding-top: 15px;
+  
+}
+
+.scoreSummaryHeadRight {
+  width: 20%;
+}
+
+.scoreSummaryHeadLeft .ons-icon {
+  padding: 5px 10px;
+}
+
+.scoreSummaryFooter ul {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+.scoreSummaryFooter ul li {
+  display: inline;
+  list-style: none;
+  margin: 0 20px;
+}
+
+.inputError {
+  border: 0 solid #a30202;
+  border-bottom-width: 2px;
+}
