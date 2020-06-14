@@ -64,6 +64,18 @@ class GameGeneralMain {
         return false;
     }
 
+    isRoundFinish(round, roundNow, players) {
+        if(round >= roundNow-1) {
+            return false;
+        }
+        for(let player of players) {
+            if(player.score[round] !== 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     getRanglist(players) {
         let rangList = [];
         for(let player of players) {

@@ -43,6 +43,18 @@ class GameRageMain extends GameGeneralMain {
         return false;
     }
 
+    isRoundFinish(round, roundNow, players) {
+        if(round >= roundNow-1) {
+            return false;
+        }
+        for(let player of players) {
+            if(player.score[round].stichIs === null) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     displayCreateOptions() {
         return "";
     }

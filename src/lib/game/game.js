@@ -82,6 +82,13 @@ class Game {
         }
     }
 
+    isGameEditAvailable() {
+        if(this.status === "FINISH" && this.end.getTime() < (new Date()).getTime()-(10*60*1000)) {
+            return false;
+        }
+        return true;
+    }
+
 }
 
 export default Game;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Toolbar, ToolbarButton, BottomToolbar, Icon, AlertDialog, Modal} from 'react-onsenui';
+import {Toolbar, ToolbarButton, BottomToolbar, Icon, AlertDialog, Modal, Toast} from 'react-onsenui';
 import Player from '../../lib/players/player';
 import ScoreSummary from './scoreSummary';
 
@@ -10,16 +10,39 @@ class GameNowView extends React.Component {
     constructor(props) {
         super(props);
         this.game = props.game;
-        this.state = {round: this.game.round, scoreUpdate: false, status: this.game.status, ranglistShow: false, dialogScoreEdit: false, windowChange: false};
+        this.state = {round: this.game.round,
+            scoreUpdate: false,
+            status: this.game.status,
+            ranglistShow: false, 
+            dialogScoreEdit: false, 
+            windowChange: false, 
+            edit: false, 
+            notificationShow: false};
         this.dialogScoreEdit = {title: '', player: new Player(), round: 0};
         this.dialogRepeat = {beginner: -1, playerNext: -1, roundNow: -1, repeat: false};
         this.scoreTBody = React.createRef();
         this.divSummary = React.createRef();
         this.windowHeight = React.createRef();
+        this.timerEdit = null;
+        this.timerNotification = null;
+        this.notification = (<div></div>);
+    }
+
+    startTimeout() {
+        clearTimeout(this.timerEdit);
+        this.timerEdit = setTimeout(() => this.setState({edit: !this.state.edit}), 10000);
     }
 
     handleMenuClick() {
       document.querySelector('#menu').open();
+    }
+
+    handleEdit() {
+        let edit = !this.state.edit;
+        if(edit) {
+            this.startTimeout();
+        }
+        this.setState({edit: edit});
     }
 
     handleNewScore() {
@@ -36,6 +59,12 @@ class GameNowView extends React.Component {
     }
 
     handleChangeScore(player, round) {
+        if(!this.state.edit && (!this.game.isGameEditAvailable() || this.game.gameType.isRoundFinish(round, this.game.round, this.game.players.players))) {
+            this.notification = (<div>Runde kann nicht mehr bearbeitet werden!</div>);
+            this.timerNotification = setTimeout(() => this.setState({notificationShow: false}), 2000);
+            this.setState({notificationShow: true});
+            return;
+        }
         this.dialogScoreEdit.title = player.name;
         this.game.gameType.loadScoreForm(player, round);
         this.dialogScoreEdit.player = player;
@@ -52,6 +81,7 @@ class GameNowView extends React.Component {
             this.dialogRepeat.beginner = playerIndex;
             this.dialogRepeat.playerNext = this.game.players.nextPlayerIndexByIndex(playerIndex);
         }
+        this.startTimeout();
         this.setState({dialogScoreEdit: true});
         this.game.gameType.focusScoreForm();
     }
@@ -99,6 +129,8 @@ class GameNowView extends React.Component {
 
     componentWillUnmount() {
         window.removeEventListener('resize', this.updateDimensions.bind(this));
+        clearTimeout(this.timerEdit);
+        clearTimeout(this.timerNotification);
     }
 
     updateDimensions () {
@@ -175,11 +207,21 @@ class GameNowView extends React.Component {
                         <button class="alert-dialog-button" onClick={this.handleNewScore.bind(this)}>Ändern</button>
                     </div>
                 </AlertDialog>
+                <Toast isOpen={this.state.notificationShow} animation="lift">
+                    {this.notification}
+                </Toast>
                 <Modal isOpen={this.state.ranglistShow} animation="fade" onClick={this.handleRanglistClose.bind(this)}>
                     <ScoreSummary game={this.game} refVar={this.divSummary}></ScoreSummary>
                 </Modal>
                 <Toolbar id="game-new-view-toolbar">
-                    <div className="center">Spiel: {this.game.name}</div>
+                    <div className="left">
+                        <ToolbarButton onClick={this.handleEdit.bind(this)}>
+                            <Icon icon="md-edit" style={this.state.edit ? {color: "red"} : {}}></Icon>
+                        </ToolbarButton>
+                    </div>
+                    <div className="center">
+                        Spiel: {this.game.name}
+                    </div>
                     <div className="right">
                         <ToolbarButton onClick={this.handleMenuClick}>
                             <Icon icon="md-menu"></Icon>
