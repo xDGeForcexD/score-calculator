@@ -7,7 +7,6 @@ import Game from '../../lib/game/game';
 
 class GameNewView extends React.Component {
     
-
     constructor(props) {
         super(props);
         this.state = {name: '', player: 0, gameType: '', dialogPlayer: false, newPlayerName: '', editPlayer: false, notificationShow: false, errors: {}};
@@ -118,7 +117,6 @@ class GameNewView extends React.Component {
 
     componentDidMount() {
         document.body._gestureDetector.dispose();
-        //this.sortable = Sortable.create(this.sort.current);
     }
 
     renderGameTypes() {
@@ -136,10 +134,18 @@ class GameNewView extends React.Component {
         }
     }
 
-
-
-
     renderPlayers() {
+        let list = this.game.players.players.map(player => (
+            <ListItem>
+                <div className="left"></div>
+                <div className="center">{player.name}</div>
+                <div className="right">{this.state.editPlayer ? <Icon icon="md-delete" onClick={() => this.handlePlayerDelete(player)}></Icon> : ''}</div>
+            </ListItem>
+        ));
+
+        if(this.state.editPlayer) {
+            return list;
+        }
         return (
             <ReactSortable
                 list={this.game.players.players}
@@ -148,13 +154,7 @@ class GameNewView extends React.Component {
                     this.setState({player: this.game.players.players.length})
                 }}
             >
-                {this.game.players.players.map(player => (
-                    <ListItem>
-                        <div className="left"></div>
-                        <div className="center">{player.name}</div>
-                        <div className="right">{this.state.editPlayer ? <Icon icon="md-delete" onClick={() => this.handlePlayerDelete(player)}></Icon> : ''}</div>
-                    </ListItem>
-                ))}
+                {list}
             </ReactSortable>
         );
     }
